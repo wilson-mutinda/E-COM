@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  device: one
+  customer: one
+  mpesa_receipt_number: MyString
+
+two:
+  device: two
+  customer: two
+  mpesa_receipt_number: MyString
