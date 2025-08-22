@@ -1,5 +1,3 @@
-import { title } from "process"
-
 function Home () {
 
   const devices = [
@@ -92,7 +90,7 @@ function Home () {
             {/* desc */}
             <div className="md:w-1/2">
               <h3 className="text-2xl font-semibold mb-4">Why Choose ElectroHub?</h3>
-              <p className="text-gray-700 mb-6">At ElectroHub, we're passionate about technology and committed to bringing you the latest electronic devices from trusted
+              <p className="text-gray-700 mb-6">At ElectroHub, we&apos;re passionate about technology and committed to bringing you the latest electronic devices from trusted
                 brands around the world. Since 2020, we've been tech enthusiasts with high-quality products at competitive prices.
               </p>
               <ul className="space-y-3">
