@@ -1,3 +1,6 @@
+"use client"
+import { useState } from "react"
+
 function Home () {
 
   const devices = [
@@ -11,6 +14,9 @@ function Home () {
     { title: "Fast Delivery", description: "We ship nationwide with delivery in 2-3 business days for most items." , icon: "/cargo-truck.png"},
     { title: "24/7 Support", description: "Our customer service team is available around the clock to assist you.", icon: "/customer-support.png"},
   ]
+
+  const[showItems, setShowItems] = useState(false);
+
   return (
     <div className="bg-gray-100 min-h-screen">
       {/* Navigation */}
@@ -21,15 +27,32 @@ function Home () {
             <img src="/logo.png" alt="logo" width={60} height={60} />
             <p className="text-blue-700 font-bold text-2xl">ElectroHub</p>
           </div>
-          {/* menu */}
-          <div className="flex bg-white rounded-md items-center p-4 gap-6">
+
+          {/* desktop menu */}
+          <div className="hidden md:flex bg-white rounded-md items-center p-4 gap-6">
             <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">Home</a>
             <a href="#about" className="text-gray-700 hover:text-blue-600 font-medium">About Us</a>
             <a href="#features" className="text-gray-700 hover:text-blue-600 font-medium">Features</a>
             <a href="#contact" className="text-gray-700 hover:text-blue-600 font-medium">Contact Us</a>
             <a href="#" className="bg-blue-600 text-white px-4 py-2 rounded-md font-medium">Login</a>
           </div>
+
+          {/* md menu */}
+          <div className="md:hidden">
+            <button onClick={() => setShowItems(!showItems)}>
+              <img src="/dial-pad.png" alt="phone" width={40} />
+            </button>
+          </div>
         </div>
+        {showItems && (
+          <div className="flex flex-col items-center py-4 gap-4 bg-gray-50 border-t">
+            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium">Home</a>
+            <a href="#about" className="text-gray-700 hover:text-blue-600 font-medium">About Us</a>
+            <a href="#features" className="text-gray-700 hover:text-blue-600 font-medium">Features</a>
+            <a href="#contact" className="text-gray-700 hover:text-blue-600 font-medium">Contact Us</a>
+            <a href="#" className="bg-blue-600 text-white px-4 py-2 rounded-md font-medium">Login</a>
+          </div>
+        )}
       </nav>
 
       {/* hero-section */}
